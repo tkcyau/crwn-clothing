@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { connect } from "react-redux";
 import MenuItem from "../menu-item/menu-item.component";
 import "./directory.styles.scss";
@@ -13,6 +13,6 @@ const Directory = ({ sections }) => (
 );
 
 const mapStatetoProps = createStructuredSelector({
-  sections: selectDirectorySections
+  sections: selectDirectorySections,
 });
 export default connect(mapStatetoProps)(Directory);
