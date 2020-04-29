@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import CustomButton from "../custom-button/custom-button.component";
 
 export const CollectionItemContainer = styled.div`
   width: 22vw;
@@ -8,34 +9,39 @@ export const CollectionItemContainer = styled.div`
   align-items: center;
   position: relative;
   &:hover {
-    .background-image {
+    .image {
       opacity: 0.8;
     }
-    .add-button {
+    button {
+      opacity: 0.85;
       display: flex;
-      align-items: center;
-      justify-content: center;
-      &:hover {
-        background-color: black;
-        color: white;
-        opacity: 0.85;
+    }
+  }
+  @media screen and (max-width: 800px) {
+    width: 40vw;
+    &:hover {
+      .image {
+        opacity: unset;
+      }
+      button {
+        opacity: unset;
       }
     }
   }
 `;
 
-export const AddButton = styled.div`
-  position: absolute;
-  height: 50px;
+export const AddButton = styled(CustomButton)`
   width: 80%;
-  padding: 25px;
   opacity: 0.7;
-  background-color: white;
-  color: black;
-  font-weight: bold;
-  display: none;
+  position: absolute;
   top: 255px;
-  cursor: pointer;
+  display: none;
+  @media screen and (max-width: 800px) {
+    display: block;
+    opacity: 0.9;
+    min-width: unset;
+    padding: 0 10px;
+  }
 `;
 
 export const BackgroundImage = styled.div`
@@ -56,11 +62,11 @@ export const CollectionFooterContainer = styled.div`
 `;
 
 export const NameContainer = styled.span`
-  width: 75%;
+  width: 90%;
   margin-bottom: 15px;
 `;
 
 export const PriceContainer = styled.span`
-  width: 20%;
+  width: 10%;
   text-align: right;
 `;
